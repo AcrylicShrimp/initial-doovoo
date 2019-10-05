@@ -18,12 +18,12 @@ public class SpeedController
     public void restartAnimation()
     {
         this.nStartTime = Time.timeSinceLevelLoad;
-        this.nDuration = 5f;
+        this.nDuration = 3f;
     }
 
     public void update()
 	{
-        this.Speed = SpeedController.easeInQuint(Mathf.Min(Time.timeSinceLevelLoad - this.nStartTime, this.nDuration), this.nReferenceSpeed * .05f, this.nReferenceSpeed * .95f, this.nDuration);
+        this.Speed = SpeedController.easeInQuint(Mathf.Min(Time.timeSinceLevelLoad - this.nStartTime, this.nDuration), this.nReferenceSpeed * .25f, this.nReferenceSpeed * .75f, this.nDuration);
 	}
 
     private static float easeInQuint(float nTime, float nBegin, float nDifference, float nDuration)
