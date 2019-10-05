@@ -17,6 +17,7 @@ public class DoovooCrachEffect : MonoBehaviour
         private Transform[] junkTrans;
         public GameObject particle;
         public Animator humman;
+        public GameObject[] timelineObj;
         public void init()
         {
             Debug.Log("초기화 합니다" + location.ToString());
@@ -36,7 +37,12 @@ public class DoovooCrachEffect : MonoBehaviour
             particle.transform.SetParent(null);
             particle.SetActive(true);
             GuageCtroller.instance.removeHuman(humman);
+
             humman.SetFloat("AddSpeed", 15f);
+            for (int i = 0; i < timelineObj.Length; i++)
+            {
+                timelineObj[i].SetActive(false);
+            }
             for (int i = 0; i < junkRigids.Length; i++)
             {
                 junkRigids[i].isKinematic = false;
