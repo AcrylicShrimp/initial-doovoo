@@ -153,7 +153,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 400000, guid: e57c21afcb7063c43a07755d9ecabeeb, type: 3}
       propertyPath: m_RootOrder
-      value: 38
+      value: 28
       objectReference: {fileID: 0}
     - target: {fileID: 400000, guid: e57c21afcb7063c43a07755d9ecabeeb, type: 3}
       propertyPath: m_LocalEulerAnglesHint.x
@@ -1213,9 +1213,9 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   m_Presets: 5
   m_EffectIntensity: 1
-  m_Damping: 0.3
+  m_Damping: 1
   m_Mass: 1
-  m_Stiffness: 0.7
+  m_Stiffness: 0.3
   doovooEffect: {fileID: 1070261685}
   sleeping: 1
   temp: 3
@@ -1304,14 +1304,14 @@ Transform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 49732013}
-  m_LocalRotation: {x: 0.09371145, y: -0.6851274, z: 0.09685228, w: 0.715848}
-  m_LocalPosition: {x: -154.2, y: -43.3, z: 40.9}
+  m_LocalRotation: {x: -0.023546388, y: -0.69110554, z: -0.025648013, w: 0.7219147}
+  m_LocalPosition: {x: -212.3902, y: -106.168625, z: 40.9}
   m_LocalScale: {x: 262.94833, y: 1, z: 524.0585}
   m_Children:
   - {fileID: 1165940998}
   m_Father: {fileID: 0}
   m_RootOrder: 6
-  m_LocalEulerAnglesHint: {x: 15.479001, y: -87.40501, z: 0.61}
+  m_LocalEulerAnglesHint: {x: -3.982, y: -87.493004, z: -0.25800002}
 --- !u!1001 &51731623
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -1537,13 +1537,13 @@ Transform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 53935446}
-  m_LocalRotation: {x: 0.15100197, y: -0, z: 0.0000000027534404, w: 0.9885335}
-  m_LocalPosition: {x: 0, y: 1.4175321, z: -5.241418}
+  m_LocalRotation: {x: 0.19189195, y: 0.000000029802319, z: 0.0000000074505797, w: 0.9814161}
+  m_LocalPosition: {x: -0.11, y: 2.63, z: -3.76}
   m_LocalScale: {x: 1.5000175, y: 1.0464338, z: 1.4580563}
   m_Children: []
   m_Father: {fileID: 200368769}
   m_RootOrder: 1
-  m_LocalEulerAnglesHint: {x: 17.37, y: 0, z: 0}
+  m_LocalEulerAnglesHint: {x: 22.126001, y: 0, z: 0}
 --- !u!1001 &55976840
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -2671,9 +2671,9 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   m_Presets: 5
   m_EffectIntensity: 1
-  m_Damping: 0.3
+  m_Damping: 1
   m_Mass: 1
-  m_Stiffness: 0.7
+  m_Stiffness: 0.3
   doovooEffect: {fileID: 1070261685}
   sleeping: 1
   temp: 3
@@ -3552,9 +3552,9 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   m_Presets: 5
   m_EffectIntensity: 1
-  m_Damping: 0.3
+  m_Damping: 1
   m_Mass: 1
-  m_Stiffness: 0.7
+  m_Stiffness: 0.3
   doovooEffect: {fileID: 1070261685}
   sleeping: 1
   temp: 3
@@ -3800,9 +3800,9 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   m_Presets: 5
   m_EffectIntensity: 1
-  m_Damping: 0.3
+  m_Damping: 1
   m_Mass: 1
-  m_Stiffness: 0.7
+  m_Stiffness: 0.3
   doovooEffect: {fileID: 1070261685}
   sleeping: 1
   temp: 3
@@ -4492,9 +4492,9 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   m_Presets: 5
   m_EffectIntensity: 1
-  m_Damping: 0.3
+  m_Damping: 1
   m_Mass: 1
-  m_Stiffness: 0.7
+  m_Stiffness: 0.3
   doovooEffect: {fileID: 1070261685}
   sleeping: 1
   temp: 3
@@ -4748,9 +4748,9 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   m_Presets: 5
   m_EffectIntensity: 1
-  m_Damping: 0.3
+  m_Damping: 1
   m_Mass: 1
-  m_Stiffness: 0.7
+  m_Stiffness: 0.3
   doovooEffect: {fileID: 1070261685}
   sleeping: 1
   temp: 3
@@ -5396,9 +5396,9 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   m_Presets: 5
   m_EffectIntensity: 1
-  m_Damping: 0.3
+  m_Damping: 1
   m_Mass: 1
-  m_Stiffness: 0.7
+  m_Stiffness: 0.3
   doovooEffect: {fileID: 1070261685}
   sleeping: 1
   temp: 3
@@ -5671,16 +5671,15 @@ Transform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 200368765}
-  m_LocalRotation: {x: -0.0000000037252903, y: -0.69532037, z: -0.000000007479684,
-    w: 0.71870005}
-  m_LocalPosition: {x: 46.781, y: 14.03, z: 1.41}
+  m_LocalRotation: {x: -0.117631495, y: -0.68529797, z: -0.121586725, w: 0.7083405}
+  m_LocalPosition: {x: -3.7954407, y: -119.14226, z: 1.4099998}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
   - {fileID: 1070261686}
   - {fileID: 53935449}
   m_Father: {fileID: 0}
   m_RootOrder: 4
-  m_LocalEulerAnglesHint: {x: 0, y: -88.105, z: 0}
+  m_LocalEulerAnglesHint: {x: -19.469002, y: -87.991005, z: -0.67}
 --- !u!54 &200368770
 Rigidbody:
   m_ObjectHideFlags: 0
@@ -5725,7 +5724,7 @@ MonoBehaviour:
   _RotationSpeed: 100
   _BaseVectorSpeed: 1
   _ImpactVectorSpeed: 5
-  _MaximumSpeed: 3
+  _MaximumSpeed: 10
 --- !u!114 &200368773
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -5738,7 +5737,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 54fab03d9dc5646eca01d55abed39ede, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  _MaximumKeyCount: 4
+  _MaximumKeyCount: 6
 --- !u!43 &205204712
 Mesh:
   m_ObjectHideFlags: 0
@@ -6476,9 +6475,9 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   m_Presets: 5
   m_EffectIntensity: 1
-  m_Damping: 0.3
+  m_Damping: 1
   m_Mass: 1
-  m_Stiffness: 0.7
+  m_Stiffness: 0.3
   doovooEffect: {fileID: 1070261685}
   sleeping: 1
   temp: 3
@@ -7488,9 +7487,9 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   m_Presets: 5
   m_EffectIntensity: 1
-  m_Damping: 0.3
+  m_Damping: 1
   m_Mass: 1
-  m_Stiffness: 0.7
+  m_Stiffness: 0.3
   doovooEffect: {fileID: 1070261685}
   sleeping: 1
   temp: 3
@@ -7824,13 +7823,13 @@ Transform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 312822771}
-  m_LocalRotation: {x: 0.06664287, y: -0.6773718, z: 0.13672617, w: 0.7197445}
-  m_LocalPosition: {x: 20.3, y: 9.5, z: -9.7}
+  m_LocalRotation: {x: -0.04891275, y: -0.6788827, z: 0.012991834, w: 0.7325006}
+  m_LocalPosition: {x: -30.271301, y: -114.58226, z: -9.700001}
   m_LocalScale: {x: 1, y: 5.51, z: 55.45}
   m_Children: []
   m_Father: {fileID: 0}
   m_RootOrder: 3
-  m_LocalEulerAnglesHint: {x: 16.329, y: -85.61, z: 6.374}
+  m_LocalEulerAnglesHint: {x: -3.0960002, y: -85.782005, z: 4.9090004}
 --- !u!1001 &318444976
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -7872,7 +7871,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 4019303215891802, guid: efd8147160aa6c64c8121a2ed788744e, type: 3}
       propertyPath: m_RootOrder
-      value: 35
+      value: 25
       objectReference: {fileID: 0}
     - target: {fileID: 4019303215891802, guid: efd8147160aa6c64c8121a2ed788744e, type: 3}
       propertyPath: m_LocalEulerAnglesHint.x
@@ -7947,7 +7946,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 400000, guid: 6973a934c46776f48bde1ea601ef6ad3, type: 3}
       propertyPath: m_RootOrder
-      value: 37
+      value: 27
       objectReference: {fileID: 0}
     - target: {fileID: 400000, guid: 6973a934c46776f48bde1ea601ef6ad3, type: 3}
       propertyPath: m_LocalEulerAnglesHint.x
@@ -8387,9 +8386,9 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   m_Presets: 5
   m_EffectIntensity: 1
-  m_Damping: 0.3
+  m_Damping: 1
   m_Mass: 1
-  m_Stiffness: 0.7
+  m_Stiffness: 0.3
   doovooEffect: {fileID: 1070261685}
   sleeping: 1
   temp: 3
@@ -8567,9 +8566,9 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   m_Presets: 5
   m_EffectIntensity: 1
-  m_Damping: 0.3
+  m_Damping: 1
   m_Mass: 1
-  m_Stiffness: 0.7
+  m_Stiffness: 0.3
   doovooEffect: {fileID: 1070261685}
   sleeping: 1
   temp: 3
@@ -8685,9 +8684,9 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   m_Presets: 5
   m_EffectIntensity: 1
-  m_Damping: 0.3
+  m_Damping: 1
   m_Mass: 1
-  m_Stiffness: 0.7
+  m_Stiffness: 0.3
   doovooEffect: {fileID: 1070261685}
   sleeping: 1
   temp: 3
@@ -8803,9 +8802,9 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   m_Presets: 5
   m_EffectIntensity: 1
-  m_Damping: 0.3
+  m_Damping: 1
   m_Mass: 1
-  m_Stiffness: 0.7
+  m_Stiffness: 0.3
   doovooEffect: {fileID: 1070261685}
   sleeping: 1
   temp: 3
@@ -9101,9 +9100,9 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   m_Presets: 5
   m_EffectIntensity: 1
-  m_Damping: 0.3
+  m_Damping: 1
   m_Mass: 1
-  m_Stiffness: 0.7
+  m_Stiffness: 0.3
   doovooEffect: {fileID: 1070261685}
   sleeping: 1
   temp: 3
@@ -9657,9 +9656,9 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   m_Presets: 5
   m_EffectIntensity: 1
-  m_Damping: 0.3
+  m_Damping: 1
   m_Mass: 1
-  m_Stiffness: 0.7
+  m_Stiffness: 0.3
   doovooEffect: {fileID: 1070261685}
   sleeping: 1
   temp: 3
@@ -11636,9 +11635,9 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   m_Presets: 5
   m_EffectIntensity: 1
-  m_Damping: 0.3
+  m_Damping: 1
   m_Mass: 1
-  m_Stiffness: 0.7
+  m_Stiffness: 0.3
   doovooEffect: {fileID: 1070261685}
   sleeping: 1
   temp: 3
@@ -12590,9 +12589,9 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   m_Presets: 5
   m_EffectIntensity: 1
-  m_Damping: 0.3
+  m_Damping: 1
   m_Mass: 1
-  m_Stiffness: 0.7
+  m_Stiffness: 0.3
   doovooEffect: {fileID: 1070261685}
   sleeping: 1
   temp: 3
@@ -13636,9 +13635,9 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   m_Presets: 5
   m_EffectIntensity: 1
-  m_Damping: 0.3
+  m_Damping: 1
   m_Mass: 1
-  m_Stiffness: 0.7
+  m_Stiffness: 0.3
   doovooEffect: {fileID: 1070261685}
   sleeping: 1
   temp: 3
@@ -13829,9 +13828,9 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   m_Presets: 5
   m_EffectIntensity: 1
-  m_Damping: 0.3
+  m_Damping: 1
   m_Mass: 1
-  m_Stiffness: 0.7
+  m_Stiffness: 0.3
   doovooEffect: {fileID: 1070261685}
   sleeping: 1
   temp: 3
@@ -14319,7 +14318,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 400000, guid: d2e23bec0de15a14889f6587eb539375, type: 3}
       propertyPath: m_RootOrder
-      value: 42
+      value: 31
       objectReference: {fileID: 0}
     - target: {fileID: 400000, guid: d2e23bec0de15a14889f6587eb539375, type: 3}
       propertyPath: m_LocalEulerAnglesHint.x
@@ -14766,9 +14765,9 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   m_Presets: 5
   m_EffectIntensity: 1
-  m_Damping: 0.3
+  m_Damping: 1
   m_Mass: 1
-  m_Stiffness: 0.7
+  m_Stiffness: 0.3
   doovooEffect: {fileID: 1070261685}
   sleeping: 1
   temp: 3
@@ -14917,9 +14916,9 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   m_Presets: 5
   m_EffectIntensity: 1
-  m_Damping: 0.3
+  m_Damping: 1
   m_Mass: 1
-  m_Stiffness: 0.7
+  m_Stiffness: 0.3
   doovooEffect: {fileID: 1070261685}
   sleeping: 1
   temp: 3
@@ -15028,7 +15027,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 4931211907768612, guid: e88b7bb02ae149940a5a0cddf34fe370, type: 3}
       propertyPath: m_RootOrder
-      value: 25
+      value: 15
       objectReference: {fileID: 0}
     - target: {fileID: 4931211907768612, guid: e88b7bb02ae149940a5a0cddf34fe370, type: 3}
       propertyPath: m_LocalEulerAnglesHint.x
@@ -15771,7 +15770,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 4418469335166708, guid: 5286e490afadac545ae3a1595b1e96e1, type: 3}
       propertyPath: m_RootOrder
-      value: 27
+      value: 17
       objectReference: {fileID: 0}
     - target: {fileID: 4418469335166708, guid: 5286e490afadac545ae3a1595b1e96e1, type: 3}
       propertyPath: m_LocalEulerAnglesHint.x
@@ -17033,9 +17032,9 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   m_Presets: 5
   m_EffectIntensity: 1
-  m_Damping: 0.3
+  m_Damping: 1
   m_Mass: 1
-  m_Stiffness: 0.7
+  m_Stiffness: 0.3
   doovooEffect: {fileID: 1070261685}
   sleeping: 1
   temp: 3
@@ -18303,9 +18302,9 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   m_Presets: 5
   m_EffectIntensity: 1
-  m_Damping: 0.3
+  m_Damping: 1
   m_Mass: 1
-  m_Stiffness: 0.7
+  m_Stiffness: 0.3
   doovooEffect: {fileID: 1070261685}
   sleeping: 1
   temp: 3
@@ -20902,9 +20901,9 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   m_Presets: 5
   m_EffectIntensity: 1
-  m_Damping: 0.3
+  m_Damping: 1
   m_Mass: 1
-  m_Stiffness: 0.7
+  m_Stiffness: 0.3
   doovooEffect: {fileID: 1070261685}
   sleeping: 1
   temp: 3
@@ -21416,9 +21415,9 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   m_Presets: 5
   m_EffectIntensity: 1
-  m_Damping: 0.3
+  m_Damping: 1
   m_Mass: 1
-  m_Stiffness: 0.7
+  m_Stiffness: 0.3
   doovooEffect: {fileID: 1070261685}
   sleeping: 1
   temp: 3
@@ -21890,13 +21889,13 @@ Transform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 933384562}
-  m_LocalRotation: {x: 0.09256859, y: -0.4932436, z: 0.052886754, w: 0.8633336}
-  m_LocalPosition: {x: -7.7, y: 0.4, z: -1.8}
+  m_LocalRotation: {x: 0.007789394, y: -0.5017944, z: -0.09393085, w: 0.8598365}
+  m_LocalPosition: {x: -59.703217, y: -113.82405, z: -1.7999992}
   m_LocalScale: {x: 1, y: 5.51, z: 55.45}
   m_Children: []
   m_Father: {fileID: 0}
   m_RootOrder: 5
-  m_LocalEulerAnglesHint: {x: 12.240001, y: -59.481003, z: 0}
+  m_LocalEulerAnglesHint: {x: -4.6390004, y: -60.138004, z: -9.782001}
 --- !u!1001 &936500511
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -22629,9 +22628,9 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   m_Presets: 5
   m_EffectIntensity: 1
-  m_Damping: 0.3
+  m_Damping: 1
   m_Mass: 1
-  m_Stiffness: 0.7
+  m_Stiffness: 0.3
   doovooEffect: {fileID: 1070261685}
   sleeping: 1
   temp: 3
@@ -23197,9 +23196,9 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   m_Presets: 5
   m_EffectIntensity: 1
-  m_Damping: 0.3
+  m_Damping: 1
   m_Mass: 1
-  m_Stiffness: 0.7
+  m_Stiffness: 0.3
   doovooEffect: {fileID: 1070261685}
   sleeping: 1
   temp: 3
@@ -24980,10 +24979,10 @@ MonoBehaviour:
     junkRigids: []
     particle: {fileID: 2070355295}
   explosionForce: 2500
-  m_EffectIntensity: 1
-  m_Damping: 0.3
+  m_EffectIntensity: 3
+  m_Damping: 1
   m_Mass: 1
-  m_Stiffness: 0.7
+  m_Stiffness: 0.3
 --- !u!4 &1070261686
 Transform:
   m_ObjectHideFlags: 0
@@ -24992,8 +24991,8 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1070261684}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 0, y: 0, z: 0}
-  m_LocalScale: {x: 1.5000184, y: 1.0017893, z: 1.5027012}
+  m_LocalPosition: {x: -0, y: 0.042, z: 0}
+  m_LocalScale: {x: 1.5000184, y: 2.1177828, z: 1.5027012}
   m_Children:
   - {fileID: 1523117835}
   - {fileID: 14958679}
@@ -25571,7 +25570,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 4019303215891802, guid: efd8147160aa6c64c8121a2ed788744e, type: 3}
       propertyPath: m_RootOrder
-      value: 32
+      value: 22
       objectReference: {fileID: 0}
     - target: {fileID: 4019303215891802, guid: efd8147160aa6c64c8121a2ed788744e, type: 3}
       propertyPath: m_LocalEulerAnglesHint.x
@@ -26487,9 +26486,9 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   m_Presets: 5
   m_EffectIntensity: 1
-  m_Damping: 0.3
+  m_Damping: 1
   m_Mass: 1
-  m_Stiffness: 0.7
+  m_Stiffness: 0.3
   doovooEffect: {fileID: 1070261685}
   sleeping: 1
   temp: 3
@@ -26790,7 +26789,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 4931211907768612, guid: e88b7bb02ae149940a5a0cddf34fe370, type: 3}
       propertyPath: m_RootOrder
-      value: 29
+      value: 19
       objectReference: {fileID: 0}
     - target: {fileID: 4931211907768612, guid: e88b7bb02ae149940a5a0cddf34fe370, type: 3}
       propertyPath: m_LocalEulerAnglesHint.x
@@ -28236,9 +28235,9 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   m_Presets: 5
   m_EffectIntensity: 1
-  m_Damping: 0.3
+  m_Damping: 1
   m_Mass: 1
-  m_Stiffness: 0.7
+  m_Stiffness: 0.3
   doovooEffect: {fileID: 1070261685}
   sleeping: 1
   temp: 3
@@ -29403,9 +29402,9 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   m_Presets: 5
   m_EffectIntensity: 1
-  m_Damping: 0.3
+  m_Damping: 1
   m_Mass: 1
-  m_Stiffness: 0.7
+  m_Stiffness: 0.3
   doovooEffect: {fileID: 1070261685}
   sleeping: 1
   temp: 3
@@ -29701,9 +29700,9 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   m_Presets: 5
   m_EffectIntensity: 1
-  m_Damping: 0.3
+  m_Damping: 1
   m_Mass: 1
-  m_Stiffness: 0.7
+  m_Stiffness: 0.3
   doovooEffect: {fileID: 1070261685}
   sleeping: 1
   temp: 3
@@ -30666,7 +30665,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 4105805283940168, guid: bd1a894f239d58d4dbf63f27e28096bd, type: 3}
       propertyPath: m_RootOrder
-      value: 36
+      value: 26
       objectReference: {fileID: 0}
     - target: {fileID: 4105805283940168, guid: bd1a894f239d58d4dbf63f27e28096bd, type: 3}
       propertyPath: m_LocalEulerAnglesHint.x
@@ -30909,7 +30908,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 4931211907768612, guid: e88b7bb02ae149940a5a0cddf34fe370, type: 3}
       propertyPath: m_RootOrder
-      value: 28
+      value: 18
       objectReference: {fileID: 0}
     - target: {fileID: 4931211907768612, guid: e88b7bb02ae149940a5a0cddf34fe370, type: 3}
       propertyPath: m_LocalEulerAnglesHint.x
@@ -31105,9 +31104,9 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   m_Presets: 5
   m_EffectIntensity: 1
-  m_Damping: 0.3
+  m_Damping: 1
   m_Mass: 1
-  m_Stiffness: 0.7
+  m_Stiffness: 0.3
   doovooEffect: {fileID: 1070261685}
   sleeping: 1
   temp: 3
@@ -32602,7 +32601,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 4880192959135794, guid: e85c18dfba00c9540859ea847782af5b, type: 3}
       propertyPath: m_RootOrder
-      value: 33
+      value: 23
       objectReference: {fileID: 0}
     - target: {fileID: 4880192959135794, guid: e85c18dfba00c9540859ea847782af5b, type: 3}
       propertyPath: m_LocalEulerAnglesHint.x
@@ -32810,9 +32809,9 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   m_Presets: 5
   m_EffectIntensity: 1
-  m_Damping: 0.3
+  m_Damping: 1
   m_Mass: 1
-  m_Stiffness: 0.7
+  m_Stiffness: 0.3
   doovooEffect: {fileID: 1070261685}
   sleeping: 1
   temp: 3
@@ -32921,7 +32920,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 4931211907768612, guid: e88b7bb02ae149940a5a0cddf34fe370, type: 3}
       propertyPath: m_RootOrder
-      value: 24
+      value: 14
       objectReference: {fileID: 0}
     - target: {fileID: 4931211907768612, guid: e88b7bb02ae149940a5a0cddf34fe370, type: 3}
       propertyPath: m_LocalEulerAnglesHint.x
@@ -33054,9 +33053,9 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   m_Presets: 5
   m_EffectIntensity: 1
-  m_Damping: 0.3
+  m_Damping: 1
   m_Mass: 1
-  m_Stiffness: 0.7
+  m_Stiffness: 0.3
   doovooEffect: {fileID: 1070261685}
   sleeping: 1
   temp: 3
@@ -33247,9 +33246,9 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   m_Presets: 5
   m_EffectIntensity: 1
-  m_Damping: 0.3
+  m_Damping: 1
   m_Mass: 1
-  m_Stiffness: 0.7
+  m_Stiffness: 0.3
   doovooEffect: {fileID: 1070261685}
   sleeping: 1
   temp: 3
@@ -33761,9 +33760,9 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   m_Presets: 5
   m_EffectIntensity: 1
-  m_Damping: 0.3
+  m_Damping: 1
   m_Mass: 1
-  m_Stiffness: 0.7
+  m_Stiffness: 0.3
   doovooEffect: {fileID: 1070261685}
   sleeping: 1
   temp: 3
@@ -33879,9 +33878,9 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   m_Presets: 5
   m_EffectIntensity: 1
-  m_Damping: 0.3
+  m_Damping: 1
   m_Mass: 1
-  m_Stiffness: 0.7
+  m_Stiffness: 0.3
   doovooEffect: {fileID: 1070261685}
   sleeping: 1
   temp: 3
@@ -34221,7 +34220,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 4099890921740684, guid: 9d200fbd47e9c7f45ad54450ebd25b94, type: 3}
       propertyPath: m_RootOrder
-      value: 40
+      value: 30
       objectReference: {fileID: 0}
     - target: {fileID: 4099890921740684, guid: 9d200fbd47e9c7f45ad54450ebd25b94, type: 3}
       propertyPath: m_LocalEulerAnglesHint.x
@@ -34429,9 +34428,9 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   m_Presets: 5
   m_EffectIntensity: 1
-  m_Damping: 0.3
+  m_Damping: 1
   m_Mass: 1
-  m_Stiffness: 0.7
+  m_Stiffness: 0.3
   doovooEffect: {fileID: 1070261685}
   sleeping: 1
   temp: 3
@@ -35083,7 +35082,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 4538438218131234, guid: f31c6bb6e68212e41b0bcae74612a240, type: 3}
       propertyPath: m_RootOrder
-      value: 39
+      value: 29
       objectReference: {fileID: 0}
     - target: {fileID: 4538438218131234, guid: f31c6bb6e68212e41b0bcae74612a240, type: 3}
       propertyPath: m_LocalEulerAnglesHint.x
@@ -35972,9 +35971,9 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   m_Presets: 5
   m_EffectIntensity: 1
-  m_Damping: 0.3
+  m_Damping: 1
   m_Mass: 1
-  m_Stiffness: 0.7
+  m_Stiffness: 0.3
   doovooEffect: {fileID: 1070261685}
   sleeping: 1
   temp: 3
@@ -36477,7 +36476,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 4931211907768612, guid: e88b7bb02ae149940a5a0cddf34fe370, type: 3}
       propertyPath: m_RootOrder
-      value: 26
+      value: 16
       objectReference: {fileID: 0}
     - target: {fileID: 4931211907768612, guid: e88b7bb02ae149940a5a0cddf34fe370, type: 3}
       propertyPath: m_LocalEulerAnglesHint.x
@@ -38907,9 +38906,9 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   m_Presets: 5
   m_EffectIntensity: 1
-  m_Damping: 0.3
+  m_Damping: 1
   m_Mass: 1
-  m_Stiffness: 0.7
+  m_Stiffness: 0.3
   doovooEffect: {fileID: 1070261685}
   sleeping: 1
   temp: 3
@@ -39894,7 +39893,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 4019303215891802, guid: efd8147160aa6c64c8121a2ed788744e, type: 3}
       propertyPath: m_RootOrder
-      value: 31
+      value: 21
       objectReference: {fileID: 0}
     - target: {fileID: 4019303215891802, guid: efd8147160aa6c64c8121a2ed788744e, type: 3}
       propertyPath: m_LocalEulerAnglesHint.x
@@ -40653,9 +40652,9 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   m_Presets: 5
   m_EffectIntensity: 1
-  m_Damping: 0.3
+  m_Damping: 1
   m_Mass: 1
-  m_Stiffness: 0.7
+  m_Stiffness: 0.3
   doovooEffect: {fileID: 1070261685}
   sleeping: 1
   temp: 3
@@ -40863,8 +40862,8 @@ Transform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1872049013}
-  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalRotation: {x: -0, y: -0, z: -0.16917601, w: 0.98558587}
+  m_LocalPosition: {x: -52.57733, y: -116.76895, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
   - {fileID: 548703906}
@@ -40901,7 +40900,7 @@ Transform:
   - {fileID: 594316212}
   m_Father: {fileID: 0}
   m_RootOrder: 2
-  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: -19.480001}
 --- !u!1001 &1873248848
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -42217,9 +42216,9 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   m_Presets: 5
   m_EffectIntensity: 1
-  m_Damping: 0.3
+  m_Damping: 1
   m_Mass: 1
-  m_Stiffness: 0.7
+  m_Stiffness: 0.3
   doovooEffect: {fileID: 1070261685}
   sleeping: 1
   temp: 3
@@ -42495,7 +42494,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 4418469335166708, guid: 5286e490afadac545ae3a1595b1e96e1, type: 3}
       propertyPath: m_RootOrder
-      value: 34
+      value: 24
       objectReference: {fileID: 0}
     - target: {fileID: 4418469335166708, guid: 5286e490afadac545ae3a1595b1e96e1, type: 3}
       propertyPath: m_LocalEulerAnglesHint.x
@@ -42708,9 +42707,9 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   m_Presets: 5
   m_EffectIntensity: 1
-  m_Damping: 0.3
+  m_Damping: 1
   m_Mass: 1
-  m_Stiffness: 0.7
+  m_Stiffness: 0.3
   doovooEffect: {fileID: 1070261685}
   sleeping: 1
   temp: 3
@@ -43126,9 +43125,9 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   m_Presets: 5
   m_EffectIntensity: 1
-  m_Damping: 0.3
+  m_Damping: 1
   m_Mass: 1
-  m_Stiffness: 0.7
+  m_Stiffness: 0.3
   doovooEffect: {fileID: 1070261685}
   sleeping: 1
   temp: 3
@@ -43744,9 +43743,9 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   m_Presets: 5
   m_EffectIntensity: 1
-  m_Damping: 0.3
+  m_Damping: 1
   m_Mass: 1
-  m_Stiffness: 0.7
+  m_Stiffness: 0.3
   doovooEffect: {fileID: 1070261685}
   sleeping: 1
   temp: 3
@@ -43930,7 +43929,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 4931211907768612, guid: e88b7bb02ae149940a5a0cddf34fe370, type: 3}
       propertyPath: m_RootOrder
-      value: 30
+      value: 20
       objectReference: {fileID: 0}
     - target: {fileID: 4931211907768612, guid: e88b7bb02ae149940a5a0cddf34fe370, type: 3}
       propertyPath: m_LocalEulerAnglesHint.x
@@ -44438,9 +44437,9 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   m_Presets: 5
   m_EffectIntensity: 1
-  m_Damping: 0.3
+  m_Damping: 1
   m_Mass: 1
-  m_Stiffness: 0.7
+  m_Stiffness: 0.3
   doovooEffect: {fileID: 1070261685}
   sleeping: 1
   temp: 3
@@ -45242,9 +45241,9 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   m_Presets: 5
   m_EffectIntensity: 1
-  m_Damping: 0.3
+  m_Damping: 1
   m_Mass: 1
-  m_Stiffness: 0.7
+  m_Stiffness: 0.3
   doovooEffect: {fileID: 1070261685}
   sleeping: 1
   temp: 3
@@ -45573,9 +45572,9 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   m_Presets: 5
   m_EffectIntensity: 1
-  m_Damping: 0.3
+  m_Damping: 1
   m_Mass: 1
-  m_Stiffness: 0.7
+  m_Stiffness: 0.3
   doovooEffect: {fileID: 1070261685}
   sleeping: 1
   temp: 3
