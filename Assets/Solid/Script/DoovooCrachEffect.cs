@@ -20,7 +20,7 @@ public class DoovooCrachEffect : MonoBehaviour
         public GameObject[] timelineObj;
         public void init()
         {
-            Debug.Log("초기화 합니다" + location.ToString());
+            //Debug.Log("초기화 합니다" + location.ToString());
             //junks = pivot.GetComponentsInChildren<GameObject>();
             junkRigids = pivot.GetComponentsInChildren<Rigidbody>();
             junkTrans = new Transform[junkRigids.Length];
@@ -88,6 +88,7 @@ public class DoovooCrachEffect : MonoBehaviour
     }
     public void crachEffect(bool isRight)
     {
+        CleraManager.instance.hpCount -= 1;
         Vector3 dir = agoPos - transform.position;
         if (isRight && rightCount > 0)
         {
