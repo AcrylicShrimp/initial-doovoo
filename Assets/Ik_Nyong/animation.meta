@@ -1,5 +1,9 @@
 fileFormatVersion: 2
+<<<<<<< HEAD:Assets/JHK.meta
 guid: ce1e29cad0914c348823e24374ef5bd5
+=======
+guid: c0b0165f2e3c02945a03d333709f8fca
+>>>>>>> origin/Ik_Nyong:Assets/Ik_Nyong/animation.meta
 folderAsset: yes
 DefaultImporter:
   externalObjects: {}
