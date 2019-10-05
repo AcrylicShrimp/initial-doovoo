@@ -17,17 +17,42 @@ public class GuageCtroller : MonoBehaviour
     private Animator[] rightAnis;
     [SerializeField]
     private Animator[] leftAnis;
+
+    public static GuageCtroller instance;
+    private void Awake()
+    {
+        instance = this;
+    }
     private void LateUpdate()
     {
         rightSlider.value = keyCtrl.RightSpeed;
         leftSlider.value = keyCtrl.LeftSpeed;
         for (int i = 0; i < rightAnis.Length; i++)
         {
-            rightAnis[i].SetFloat("AddSpeed", aniSpeed * keyCtrl.RightSpeed);
+            if (rightAnis[i] != null) rightAnis[i].SetFloat("AddSpeed", aniSpeed * keyCtrl.RightSpeed);
         }
         for (int i = 0; i < leftAnis.Length; i++)
         {
-            leftAnis[i].SetFloat("AddSpeed", aniSpeed * keyCtrl.LeftSpeed);
+            if (leftAnis[i] != null) leftAnis[i].SetFloat("AddSpeed", aniSpeed * keyCtrl.LeftSpeed);
+        }
+    }
+    public void removeHuman(Animator ani)
+    {
+        for (int i = 0; i < rightAnis.Length; i++)
+        {
+            if (rightAnis[i] == ani)
+            {
+                rightAnis[i] = null;
+                return;
+            }
+        }
+        for (int i = 0; i < leftAnis.Length; i++)
+        {
+            if (leftAnis[i] == ani)
+            {
+                leftAnis[i] = null;
+                return;
+            }
         }
     }
 }

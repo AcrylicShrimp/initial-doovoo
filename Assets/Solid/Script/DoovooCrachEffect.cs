@@ -1,9 +1,12 @@
-﻿using System.Collections;
+﻿using System;
+using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
 public class DoovooCrachEffect : MonoBehaviour
 {
+    public static Action<bool> crachCall;
+
     [System.Serializable]
     private class Part
     {
@@ -13,6 +16,7 @@ public class DoovooCrachEffect : MonoBehaviour
         public Rigidbody[] junkRigids;
         private Transform[] junkTrans;
         public GameObject particle;
+        public Animator humman;
         public void init()
         {
             Debug.Log("초기화 합니다" + location.ToString());
@@ -31,10 +35,14 @@ public class DoovooCrachEffect : MonoBehaviour
             Debug.Log(explosionPoint);
             particle.transform.SetParent(null);
             particle.SetActive(true);
+            GuageCtroller.instance.removeHuman(humman);
+            humman.SetFloat("AddSpeed", 15f);
             for (int i = 0; i < junkRigids.Length; i++)
             {
                 junkRigids[i].isKinematic = false;
                 junkRigids[i].AddExplosionForce(force, explosionPoint + pivot.position, 100f);
+                junkRigids[i].AddTorque(new Vector3(UnityEngine.Random.Range(-180f, 180f), UnityEngine.Random.Range(-180f, 180f),
+                    UnityEngine.Random.Range(-180f, 180f)));
                 junkTrans[i].SetParent(null);
             }
             return junkTrans;
@@ -60,6 +68,7 @@ public class DoovooCrachEffect : MonoBehaviour
     private Vector3 agoPos;
     private void Awake()
     {
+        crachCall = crachEffect;
         agoPos = transform.position;
         for (int i = 0; i < parts.Length; i++)
         {
