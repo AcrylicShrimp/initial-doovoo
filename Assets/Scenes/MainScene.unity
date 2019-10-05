@@ -5721,10 +5721,11 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 62e11f31a3781469e9cc186296444125, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  _RotationSpeed: 90
+  _MoveSpeed: 10
+  _RotationSpeed: 100
   _BaseVectorSpeed: 1
   _ImpactVectorSpeed: 5
-  _MaximumSpeed: 4
+  _MaximumSpeed: 3
 --- !u!114 &200368773
 MonoBehaviour:
   m_ObjectHideFlags: 0
