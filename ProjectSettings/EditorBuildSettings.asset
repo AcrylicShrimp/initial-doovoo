@@ -6,22 +6,9 @@ EditorBuildSettings:
   serializedVersion: 2
   m_Scenes:
   - enabled: 1
-    path: Assets/JellyCube/Levels/level_1_tutorial.unity
+    path: Assets/Scenes/PlayScene.unity
+    guid: 543e38c68295e3c4abf8c9feb62ac00f
   - enabled: 1
-    path: Assets/JellyCube/Levels/level_2.unity
-  - enabled: 1
-    path: Assets/JellyCube/Levels/level_3.unity
-  - enabled: 1
-    path: Assets/JellyCube/Levels/level_4.unity
-  - enabled: 1
-    path: Assets/JellyCube/Levels/level_5.unity
-  - enabled: 1
-    path: Assets/JellyCube/Levels/level_6.unity
-  - enabled: 1
-    path: Assets/JellyCube/Levels/level_pbr_spheres.unity
-  - enabled: 1
-    path: Assets/JellyCube/Levels/level_pbr_roundblock.unity
-  - enabled: 1
-    path: Assets/JellyCube/Levels/level_sokoban.unity
-  - enabled: 1
-    path: Assets/JellyCube/Levels/cube_behaviours.unity
+    path: Assets/Scenes/MidScene.unity
+    guid: e7ad50305cfc40b4192a5bf94ed5cdd5
+  m_configObjects: {}

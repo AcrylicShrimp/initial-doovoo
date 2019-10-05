@@ -8,9 +8,30 @@ using UnityEngine.SceneManagement;
 public class CleraManager : MonoBehaviour
 {
     public static CleraManager instance;
+    [SerializeField]
+    private int realHP = 6;
+    public int hpCount
+    {
+        get { return realHP; }
+        set
+        {
+            realHP = value;
+            if (realHP <= 0)
+            {
 
-    public int hpCount = 6;
-
+                Invoke("gameOverCall", 1f);
+            }
+        }
+    }
+    public void gameOverCall()
+    {
+        trigger.gameOver();
+        gameOverObj.SetActive(true);
+    }
+    [SerializeField]
+    private ClearTrigger trigger;
+    [SerializeField]
+    private GameObject gameOverObj;
     [SerializeField]
     private Image Title;
     [SerializeField]
@@ -36,7 +57,7 @@ public class CleraManager : MonoBehaviour
     }
     public void resetScene()
     {
-        SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex);
+        SceneManager.LoadScene(1);
     }
     IEnumerator onClearGuage()
     {

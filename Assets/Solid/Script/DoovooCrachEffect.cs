@@ -6,8 +6,11 @@ using UnityEngine;
 public class DoovooCrachEffect : MonoBehaviour
 {
     public static Action<bool> crachCall;
-
-    [System.Serializable]
+    [SerializeField]
+    private GameObject leftEffect;
+    [SerializeField]
+    private GameObject rightEffect;
+    [Serializable]
     private class Part
     {
         public PartLocation location;
@@ -88,14 +91,19 @@ public class DoovooCrachEffect : MonoBehaviour
     }
     public void crachEffect(bool isRight)
     {
-        CleraManager.instance.hpCount -= 1;
         Vector3 dir = agoPos - transform.position;
+
+        if ((isRight && rightCount == 0) || (!isRight && leftCount == 0))
+            isRight = !isRight;
+
         if (isRight && rightCount > 0)
         {
             StartCoroutine(disableJunk(
               partDic[(PartLocation)(3 - --rightCount)].explosion((dir + Vector3.right * 0.1f).normalized, explosionForce,
               Vector3.Distance(agoPos, transform.position))
                    ));
+            if (rightCount == 0) rightEffect.SetActive(false);
+            CleraManager.instance.hpCount -= 1;
         }
         else if (leftCount > 0)
         {
@@ -103,6 +111,8 @@ public class DoovooCrachEffect : MonoBehaviour
                partDic[(PartLocation)(-3 + --leftCount)].explosion((dir - Vector3.right * 0.1f).normalized, explosionForce,
                Vector3.Distance(agoPos, transform.position))
              ));
+            if (leftCount == 0) leftEffect.SetActive(false);
+            CleraManager.instance.hpCount -= 1;
         }
     }
     private void LateUpdate()

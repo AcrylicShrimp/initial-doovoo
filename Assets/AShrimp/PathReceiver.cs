@@ -14,6 +14,8 @@ public class PathReceiver : MonoBehaviour
 
     private void OnTriggerEnter(Collider other)
     {
+        var path = other.GetComponent<Path>();
+        if (path == null) return;
         this.PathSpeed = other.GetComponent<Path>()._Speed;
         this.PathDirection = other.transform.rotation * Vector3.forward;
     }
