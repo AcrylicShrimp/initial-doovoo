@@ -208,6 +208,7 @@ GameObject:
   - component: {fileID: 200368766}
   - component: {fileID: 200368770}
   - component: {fileID: 200368771}
+  - component: {fileID: 200368773}
   - component: {fileID: 200368772}
   m_Layer: 0
   m_Name: Doovoo
@@ -329,10 +330,23 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 62e11f31a3781469e9cc186296444125, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  _RotationSpeed: 45
+  _RotationSpeed: 60
   _BaseVectorSpeed: 10
   _ImpactVectorSpeed: 5
   _MaximumSpeed: 20
+--- !u!114 &200368773
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 200368765}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 54fab03d9dc5646eca01d55abed39ede, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  _MaximumKeyCount: 13
 --- !u!1 &278504168
 GameObject:
   m_ObjectHideFlags: 0

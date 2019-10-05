@@ -1,7 +1,7 @@
 ﻿
 using UnityEngine;
 
-[RequireComponent(typeof(PathReceiver), typeof(Rigidbody))]
+[RequireComponent(typeof(Rigidbody), typeof(PathReceiver), typeof(KeyStrokeInputController))]
 public class DoovooController : MonoBehaviour
 {
     public enum ImpactDirection
@@ -20,39 +20,26 @@ public class DoovooController : MonoBehaviour
     private float _MaximumSpeed;
 
     private float nAngularSpeed;
-    private SpeedController sSpeedController;
-    private PathReceiver sPathReceiver;
     private Rigidbody sRigidbody;
+    private PathReceiver sPathReceiver;
+    private KeyStrokeInputController sKeyStrokeInputController;
+    private SpeedController sSpeedController;
 
     private void Awake()
     {
-        this.sSpeedController = new SpeedController(this._MaximumSpeed);
-        this.sPathReceiver = this.GetComponent<PathReceiver>();
         this.sRigidbody = this.GetComponent<Rigidbody>();
+        this.sPathReceiver = this.GetComponent<PathReceiver>();
+        this.sKeyStrokeInputController = this.GetComponent<KeyStrokeInputController>();
+        this.sSpeedController = new SpeedController(this._MaximumSpeed);
     }
 
     private void FixedUpdate()
     {
         this.sSpeedController.update();
 
-        float nAdditionalSpeed = 0f;
+        var nAdditionalSpeed = this._BaseVectorSpeed * .5f + (this.sKeyStrokeInputController.LeftSpeed + this.sKeyStrokeInputController.RightSpeed);
 
-        if (Input.GetKey(KeyCode.LeftArrow) || Input.GetKey(KeyCode.RightArrow))
-        {
-            if (Input.GetKey(KeyCode.LeftArrow))
-                nAdditionalSpeed += this._BaseVectorSpeed * .5f;
-
-            if (Input.GetKey(KeyCode.RightArrow))
-                nAdditionalSpeed += this._BaseVectorSpeed * .5f;
-
-            if (Input.GetKey(KeyCode.LeftArrow) ^ Input.GetKey(KeyCode.RightArrow))
-            {
-                if (Input.GetKey(KeyCode.LeftArrow))
-                    this.nAngularSpeed = -this._RotationSpeed;
-                else
-                    this.nAngularSpeed = this._RotationSpeed;
-            }
-        }
+        this.nAngularSpeed = this._RotationSpeed * (this.sKeyStrokeInputController.RightSpeed - this.sKeyStrokeInputController.LeftSpeed);
 
         this.transform.Rotate(Vector3.up, this.nAngularSpeed * Time.deltaTime, Space.Self);
 
