@@ -25,7 +25,7 @@ public class DoovooCrachEffect : MonoBehaviour
                 junkTrans[i] = junkRigids[i].GetComponent<Transform>();
             }
         }
-        public void explosion(Vector3 dir, float force)
+        public Transform[] explosion(Vector3 dir, float force)
         {
             Vector3 explosionPoint = (dir + Vector3.down * 0.5f).normalized;//pivot.InverseTransformPoint(-dir);
             Debug.Log(explosionPoint);
@@ -37,7 +37,9 @@ public class DoovooCrachEffect : MonoBehaviour
                 junkRigids[i].AddExplosionForce(force, explosionPoint + pivot.position, 100f);
                 junkTrans[i].SetParent(null);
             }
+            return junkTrans;
         }
+
     }
     [SerializeField]
     private Part[] parts;
@@ -71,14 +73,17 @@ public class DoovooCrachEffect : MonoBehaviour
     public void crachEffect(bool isRight)
     {
         Vector3 dir = agoPos - transform.position;
-        if (isRight)
+        if (isRight && rightCount > 0)
         {
-            partDic[(PartLocation)(3 - --rightCount)].explosion((dir + Vector3.right * 0.1f).normalized, explosionForce);
+            StartCoroutine(disableJunk(
+              partDic[(PartLocation)(3 - --rightCount)].explosion((dir + Vector3.right * 0.1f).normalized, explosionForce)
+                   ));
         }
-        else
+        else if (leftCount > 0)
         {
-
-            partDic[(PartLocation)(-3 + --leftCount)].explosion((dir - Vector3.right * 0.1f).normalized, explosionForce);
+            StartCoroutine(disableJunk(
+           partDic[(PartLocation)(-3 + --leftCount)].explosion((dir - Vector3.right * 0.1f).normalized, explosionForce)
+             ));
         }
     }
     private void LateUpdate()
@@ -94,6 +99,15 @@ public class DoovooCrachEffect : MonoBehaviour
         if (GUILayout.Button("Left"))
         {
             crachEffect(false);
+        }
+    }
+    public IEnumerator disableJunk(Transform[] junkTrans)
+    {
+        yield return new WaitForSeconds(1f);
+        Debug.Log("꺼주기");
+        for (int i = 0; i < junkTrans.Length; i++)
+        {
+            junkTrans[i].gameObject.SetActive(false);
         }
     }
 }
