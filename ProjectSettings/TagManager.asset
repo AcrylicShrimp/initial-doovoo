@@ -6,6 +6,7 @@ TagManager:
   tags:
   - CubeBlue
   - CubeRed
+  - Wall
   layers:
   - Default
   - TransparentFX
