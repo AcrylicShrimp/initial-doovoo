@@ -1,6 +1,4 @@
 ﻿
-using System.Collections;
-
 using UnityEngine;
 
 public class KeyStrokeInputController : MonoBehaviour
@@ -26,6 +24,14 @@ public class KeyStrokeInputController : MonoBehaviour
 
         public void update()
         {
+            if (Time.timeSinceLevelLoad - this.nLastTime < this.nMaxTimeDelta)
+            {
+                this.Coefficient = 1f;
+                return;
+            }
+
+            this.Coefficient = Mathf.Min(this.nMaxTimeDelta / (Time.timeSinceLevelLoad - this.nLastTime), 1f);
+
             if (Input.GetKeyDown(this.nFirst) && this.nLastKey != this.nFirst)
             {
                 this.nLastKey = this.nFirst;
@@ -36,20 +42,6 @@ public class KeyStrokeInputController : MonoBehaviour
                 this.nLastKey = this.nSecond;
                 this.nLastTime = Time.timeSinceLevelLoad;
             }
-
-            if (Time.timeSinceLevelLoad - this.nLastTime >= 1f)
-            {
-                this.Coefficient = 0f;
-                return;
-            }
-
-            if (Time.timeSinceLevelLoad - this.nLastTime < this.nMaxTimeDelta)
-            {
-                this.Coefficient = 1f;
-                return;
-            }
-
-            this.Coefficient = Mathf.Min(this.nMaxTimeDelta / (Time.timeSinceLevelLoad - this.nLastTime), 1f);
         }
     }
 

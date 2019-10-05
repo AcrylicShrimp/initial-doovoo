@@ -3,18 +3,18 @@ using UnityEngine;
 
 public class PathReceiver : MonoBehaviour
 {
-    public Vector3 PathNormal { get; private set; }
+    public float PathSpeed { get; private set; }
     public Vector3 PathDirection { get; private set; }
 
     private void Awake()
     {
-        this.PathNormal = Vector3.down;
+        this.PathSpeed = 0f;
         this.PathDirection = Vector3.zero;
     }
 
     private void OnTriggerEnter(Collider other)
     {
-        this.PathNormal = other.transform.rotation * Vector3.up;
+        this.PathSpeed = other.GetComponent<Path>()._Speed;
         this.PathDirection = other.transform.rotation * Vector3.forward;
     }
 }

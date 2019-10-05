@@ -15,8 +15,6 @@ public class DoovooController : MonoBehaviour
     [SerializeField]
     private float _RotationSpeed;
     [SerializeField]
-    private float _BaseVectorSpeed;
-    [SerializeField]
     private float _ImpactVectorSpeed;
     [SerializeField]
     private float _MaximumSpeed;
@@ -46,7 +44,7 @@ public class DoovooController : MonoBehaviour
         this.transform.Rotate(Vector3.up, this.nAngularSpeed * Time.deltaTime, Space.Self);
 
         //Add base velocity.
-        this.sRigidbody.AddForce(this.sPathReceiver.PathDirection * this._BaseVectorSpeed, ForceMode.Acceleration);
+        this.sRigidbody.AddForce(this.sPathReceiver.PathDirection * this.sPathReceiver.PathSpeed, ForceMode.Acceleration);
 
         //Add directional velocity.
         this.sRigidbody.AddForce(this.transform.forward * nAdditionalSpeed, ForceMode.Acceleration);
