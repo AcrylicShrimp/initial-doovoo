@@ -4,12 +4,6 @@ using UnityEngine;
 [RequireComponent(typeof(Rigidbody), typeof(PathReceiver), typeof(KeyStrokeInputController))]
 public class DoovooController : MonoBehaviour
 {
-    public enum ImpactDirection
-    {
-        Left,
-        Right
-    }
-
     [SerializeField]
     private float _MoveSpeed;
     [SerializeField]
@@ -64,13 +58,6 @@ public class DoovooController : MonoBehaviour
         this.sRigidbody.AddForce(this._ImpactVectorSpeed * sNormal - this.sRigidbody.velocity, ForceMode.VelocityChange);
         this.sSpeedController.restartAnimation();
 
-        ImpactDirection sImpactDirection;
-
-        if (Vector3.Dot(sContact.point - this.transform.position, this.transform.right) < 0f)
-            sImpactDirection = ImpactDirection.Left;
-        else
-            sImpactDirection = ImpactDirection.Right;
-
-        Debug.Log(sImpactDirection);
+        DoovooCrachEffect.crachCall(Vector3.Dot(sContact.point - this.transform.position, this.transform.right) < 0f);
     }
 }
