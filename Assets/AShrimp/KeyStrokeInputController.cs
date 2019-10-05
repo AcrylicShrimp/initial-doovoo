@@ -13,9 +13,9 @@ public class KeyStrokeInputController : MonoBehaviour
         private KeyCode nSecond;
         private KeyCode nLastKey;
         private int nKeyCount;
-        private int nMaximumKeyCount;
+        private float nMaximumKeyCount;
 
-        public KeyStrokeInput(int nMaximumKeyCount, KeyCode nFirst, KeyCode nSecond)
+        public KeyStrokeInput(float nMaximumKeyCount, KeyCode nFirst, KeyCode nSecond)
         {
             this.Coefficient = 0f;
             this.nFirst = nFirst;
@@ -55,7 +55,7 @@ public class KeyStrokeInputController : MonoBehaviour
     public float RightSpeed { get; private set; }
 
     [SerializeField]
-    private int _MaximumKeyCount;
+    private float _MaximumKeyCount;
     private KeyStrokeInput sLeftInput;
     private KeyStrokeInput sRightInput;
 
