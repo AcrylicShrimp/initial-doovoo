@@ -6,6 +6,11 @@ using UnityEngine.UI;
 public class GuageCtroller : MonoBehaviour
 {
     [SerializeField]
+    private Color[] guageColors;
+    //private Vector3[] guageColor
+    [SerializeField]
+    private Image[] guageImages;
+    [SerializeField]
     private KeyStrokeInputController keyCtrl;
     [SerializeField]
     private float aniSpeed;
@@ -23,10 +28,21 @@ public class GuageCtroller : MonoBehaviour
     {
         instance = this;
     }
+    private void colorSet()
+    {
+        //guageColors[0].r;
+        //guageColors[0].g;
+        //guageColors[0].b;
+        //guageColors[1].r;
+        //guageColors[1].g;
+        //guageColors[1].b;
+    }
     private void LateUpdate()
     {
-        rightSlider.value = keyCtrl.RightSpeed;
-        leftSlider.value = keyCtrl.LeftSpeed;
+        rightSlider.value = Mathf.Lerp(rightSlider.value, keyCtrl.RightSpeed, 0.1f);
+        leftSlider.value = Mathf.Lerp(leftSlider.value, keyCtrl.LeftSpeed, 0.1f);
+        guageImages[0].color = Vector4.Lerp(guageColors[0], guageColors[1], keyCtrl.RightSpeed);
+        guageImages[1].color = Vector4.Lerp(guageColors[0], guageColors[1], keyCtrl.LeftSpeed);
         for (int i = 0; i < rightAnis.Length; i++)
         {
             if (rightAnis[i] != null) rightAnis[i].SetFloat("AddSpeed", aniSpeed * keyCtrl.RightSpeed);
