@@ -12,42 +12,44 @@ public class KeyStrokeInputController : MonoBehaviour
         private KeyCode nFirst;
         private KeyCode nSecond;
         private KeyCode nLastKey;
-        private int nKeyCount;
-        private int nMaximumKeyCount;
+        private float nLastTime;
+        private float nMaxTimeDelta;
 
-        public KeyStrokeInput(int nMaximumKeyCount, KeyCode nFirst, KeyCode nSecond)
+        public KeyStrokeInput(float nMaxTimeDelta, KeyCode nFirst, KeyCode nSecond)
         {
             this.Coefficient = 0f;
             this.nFirst = nFirst;
             this.nSecond = nSecond;
-            this.nMaximumKeyCount = nMaximumKeyCount;
+            this.nLastTime = 0f;
+            this.nMaxTimeDelta = nMaxTimeDelta;
         }
 
-        public void update(MonoBehaviour sOwner)
+        public void update()
         {
             if (Input.GetKeyDown(this.nFirst) && this.nLastKey != this.nFirst)
             {
                 this.nLastKey = this.nFirst;
-                ++this.nKeyCount;
-
-                sOwner.StartCoroutine(this.reduceKeyCount());
+                this.nLastTime = Time.timeSinceLevelLoad;
             }
             else if (Input.GetKeyDown(this.nSecond) && this.nLastKey != this.nSecond)
             {
                 this.nLastKey = this.nSecond;
-                ++this.nKeyCount;
-
-                sOwner.StartCoroutine(this.reduceKeyCount());
+                this.nLastTime = Time.timeSinceLevelLoad;
             }
 
-            this.Coefficient = Mathf.Min(this.nKeyCount / this.nMaximumKeyCount, 1f);
-        }
+            if (Time.timeSinceLevelLoad - this.nLastTime >= 1f)
+            {
+                this.Coefficient = 0f;
+                return;
+            }
 
-        private IEnumerator reduceKeyCount()
-        {
-            yield return new WaitForSeconds(1f);
+            if (Time.timeSinceLevelLoad - this.nLastTime < this.nMaxTimeDelta)
+            {
+                this.Coefficient = 1f;
+                return;
+            }
 
-            --this.nKeyCount;
+            this.Coefficient = Mathf.Min(this.nMaxTimeDelta / (Time.timeSinceLevelLoad - this.nLastTime), 1f);
         }
     }
 
@@ -55,20 +57,20 @@ public class KeyStrokeInputController : MonoBehaviour
     public float RightSpeed { get; private set; }
 
     [SerializeField]
-    private int _MaximumKeyCount;
+    private float _MaxTimeDelta;
     private KeyStrokeInput sLeftInput;
     private KeyStrokeInput sRightInput;
 
     private void Awake()
     {
-        this.sLeftInput = new KeyStrokeInput(this._MaximumKeyCount, KeyCode.Z, KeyCode.X);
-        this.sRightInput = new KeyStrokeInput(this._MaximumKeyCount, KeyCode.Comma, KeyCode.Period);
+        this.sLeftInput = new KeyStrokeInput(this._MaxTimeDelta, KeyCode.Z, KeyCode.X);
+        this.sRightInput = new KeyStrokeInput(this._MaxTimeDelta, KeyCode.Comma, KeyCode.Period);
     }
 
     private void Update()
     {
-        this.sLeftInput.update(this);
-        this.sRightInput.update(this);
+        this.sLeftInput.update();
+        this.sRightInput.update();
 
         this.LeftSpeed = this.sLeftInput.Coefficient;
         this.RightSpeed = this.sRightInput.Coefficient;

@@ -41,7 +41,7 @@ public class DoovooController : MonoBehaviour
 
         var nAdditionalSpeed = this._MoveSpeed + (this.sKeyStrokeInputController.LeftSpeed + this.sKeyStrokeInputController.RightSpeed);
 
-        this.nAngularSpeed = this._RotationSpeed * (this.sKeyStrokeInputController.RightSpeed - this.sKeyStrokeInputController.LeftSpeed);
+        this.nAngularSpeed = this._RotationSpeed * (this.sKeyStrokeInputController.LeftSpeed - this.sKeyStrokeInputController.RightSpeed);
 
         this.transform.Rotate(Vector3.up, this.nAngularSpeed * Time.deltaTime, Space.Self);
 
@@ -52,7 +52,7 @@ public class DoovooController : MonoBehaviour
         this.sRigidbody.AddForce(this.transform.forward * nAdditionalSpeed, ForceMode.Acceleration);
 
         //Add some drag.
-        this.sRigidbody.AddForce(Mathf.Min(0f, this.sSpeedController.Speed - Vector3.Dot(this.sRigidbody.velocity, this.sPathReceiver.PathDirection)) * this.sPathReceiver.PathDirection * this._BaseVectorSpeed, ForceMode.Acceleration);
+        this.sRigidbody.AddForce(Mathf.Min(0f, this.sSpeedController.Speed - this.sRigidbody.velocity.magnitude) * this.sRigidbody.velocity, ForceMode.Acceleration);
     }
 
     private void OnCollisionEnter(Collision collision)
