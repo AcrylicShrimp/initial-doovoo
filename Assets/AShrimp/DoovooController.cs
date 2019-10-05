@@ -37,7 +37,7 @@ public class DoovooController : MonoBehaviour
     {
         this.sSpeedController.update();
 
-        var nAdditionalSpeed = this._MoveSpeed + (this.sKeyStrokeInputController.LeftSpeed + this.sKeyStrokeInputController.RightSpeed);
+        var nAdditionalSpeed = this._MoveSpeed * (this.sKeyStrokeInputController.LeftSpeed + this.sKeyStrokeInputController.RightSpeed);
 
         this.nAngularSpeed = this._RotationSpeed * (this.sKeyStrokeInputController.LeftSpeed - this.sKeyStrokeInputController.RightSpeed);
 
