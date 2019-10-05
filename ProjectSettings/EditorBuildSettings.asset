@@ -4,5 +4,24 @@
 EditorBuildSettings:
   m_ObjectHideFlags: 0
   serializedVersion: 2
-  m_Scenes: []
-  m_configObjects: {}
+  m_Scenes:
+  - enabled: 1
+    path: Assets/JellyCube/Levels/level_1_tutorial.unity
+  - enabled: 1
+    path: Assets/JellyCube/Levels/level_2.unity
+  - enabled: 1
+    path: Assets/JellyCube/Levels/level_3.unity
+  - enabled: 1
+    path: Assets/JellyCube/Levels/level_4.unity
+  - enabled: 1
+    path: Assets/JellyCube/Levels/level_5.unity
+  - enabled: 1
+    path: Assets/JellyCube/Levels/level_6.unity
+  - enabled: 1
+    path: Assets/JellyCube/Levels/level_pbr_spheres.unity
+  - enabled: 1
+    path: Assets/JellyCube/Levels/level_pbr_roundblock.unity
+  - enabled: 1
+    path: Assets/JellyCube/Levels/level_sokoban.unity
+  - enabled: 1
+    path: Assets/JellyCube/Levels/cube_behaviours.unity
