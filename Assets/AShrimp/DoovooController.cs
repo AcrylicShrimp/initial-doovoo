@@ -11,6 +11,8 @@ public class DoovooController : MonoBehaviour
     }
 
     [SerializeField]
+    private float _MoveSpeed;
+    [SerializeField]
     private float _RotationSpeed;
     [SerializeField]
     private float _BaseVectorSpeed;
@@ -37,7 +39,7 @@ public class DoovooController : MonoBehaviour
     {
         this.sSpeedController.update();
 
-        var nAdditionalSpeed = this._BaseVectorSpeed * .5f + (this.sKeyStrokeInputController.LeftSpeed + this.sKeyStrokeInputController.RightSpeed);
+        var nAdditionalSpeed = this._MoveSpeed + (this.sKeyStrokeInputController.LeftSpeed + this.sKeyStrokeInputController.RightSpeed);
 
         this.nAngularSpeed = this._RotationSpeed * (this.sKeyStrokeInputController.RightSpeed - this.sKeyStrokeInputController.LeftSpeed);
 
