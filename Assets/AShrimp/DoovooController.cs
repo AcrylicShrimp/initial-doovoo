@@ -52,7 +52,7 @@ public class DoovooController : MonoBehaviour
         this.sRigidbody.AddForce(this.transform.forward * nAdditionalSpeed, ForceMode.Acceleration);
 
         //Add some drag.
-        this.sRigidbody.AddForce(Mathf.Min(0f, this.sSpeedController.Speed - Vector3.Dot(this.sRigidbody.velocity, this.sPathReceiver.PathDirection)) * this.sPathReceiver.PathDirection * this._BaseVectorSpeed, ForceMode.Acceleration);
+        this.sRigidbody.AddForce(Mathf.Min(0f, this.sSpeedController.Speed - this.sRigidbody.velocity.magnitude) * this.sRigidbody.velocity, ForceMode.Acceleration);
     }
 
     private void OnCollisionEnter(Collision collision)
