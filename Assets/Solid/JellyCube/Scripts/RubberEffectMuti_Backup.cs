@@ -10,7 +10,7 @@ using System.Collections;
 
 namespace JellyCube
 {
-    public class RubberEffectMuti : MonoBehaviour
+    public class RubberEffectMuti_Backup : MonoBehaviour
     {
         public RubberType m_Presets;
 
@@ -20,32 +20,38 @@ namespace JellyCube
             RubberDuck,
             HardRubber,
             Jelly,
-            SoftLatex,
-            Doovoo,
+            SoftLatex
         }
 
         public float m_EffectIntensity = 1;
         public float m_Damping = 0.7f;
         public float m_Mass = 1;
         public float m_Stiffness = 0.2f;
-        public DoovooCrachEffect doovooEffect;
 
-        private Mesh WorkingMesh;
-        private Mesh OriginalMesh;
+        [System.Serializable]
+        private class Unit
+        {
+            public Transform target;
 
-        private VertexRubber[] vr;
-        private Vector3[] V3_WorkingMesh;
-        private MeshRenderer Renderer;
+            public Mesh WorkingMesh;
+            public Mesh OriginalMesh;
+
+            public VertexRubber[] vr;
+            public Vector3[] V3_WorkingMesh;
+            public MeshRenderer Renderer;
+        }
+        [SerializeField]
+        private GameObject[] targets;
+        private Unit[] units;
+        [SerializeField]
+        private float temp;
+        [SerializeField]
+        private Transform pivotTran;
 
         public bool sleeping = true;
 
         private Vector3 last_world_position;
         private Quaternion last_world_rotation;
-
-        [SerializeField]
-        private float temp;
-        [SerializeField]
-        private Transform pivotTran;
 
         internal class VertexRubber
         {
@@ -109,40 +115,50 @@ namespace JellyCube
         void Start()
         {
             checkPreset();
-
             if (pivotTran == null) pivotTran = transform;
-            MeshFilter filter = (MeshFilter)GetComponent(typeof(MeshFilter));
-            OriginalMesh = filter.sharedMesh;
+            units = new Unit[targets.Length];
 
-            WorkingMesh = Instantiate(filter.sharedMesh) as Mesh;
-            filter.sharedMesh = WorkingMesh;
-
-            ArrayList ActiveVertex = new ArrayList();
-
-            for (int i = 0; i < WorkingMesh.vertices.Length; i++)
+            for (int i = 0; i < units.Length; i++)
             {
-                ActiveVertex.Add(i);
+                Debug.Log("초기화" + i + targets[i].name);
+                units[i] = new Unit();
+                units[i].target = targets[i].GetComponent<Transform>();
+                MeshFilter filter = units[i].target.GetComponent<MeshFilter>();
+                units[i].OriginalMesh = filter.sharedMesh;
+
+                units[i].WorkingMesh = Instantiate(filter.sharedMesh) as Mesh;
+                filter.sharedMesh = units[i].WorkingMesh;
+
+                ArrayList ActiveVertex = new ArrayList();
+
+                for (int j = 0; j < units[i].WorkingMesh.vertices.Length; j++)
+                {
+                    ActiveVertex.Add(j);
+                }
+
+                units[i].vr = new VertexRubber[ActiveVertex.Count];
+
+                for (int j = 0; j < ActiveVertex.Count; j++)
+                {
+                    int ref_index = (int)ActiveVertex[j];
+                    units[i].vr[j] = new VertexRubber(transform.TransformPoint(units[i].WorkingMesh.vertices[ref_index]), m_Mass, m_Stiffness, m_Damping);
+                    units[i].vr[j].indexId = ref_index;
+                }
+
+                units[i].Renderer = units[i].target.GetComponent<MeshRenderer>();
             }
-
-            vr = new VertexRubber[ActiveVertex.Count];
-
-            for (int i = 0; i < ActiveVertex.Count; i++)
-            {
-                int ref_index = (int)ActiveVertex[i];
-                vr[i] = new VertexRubber(transform.TransformPoint(WorkingMesh.vertices[ref_index]), m_Mass, m_Stiffness, m_Damping);
-                vr[i].indexId = ref_index;
-            }
-
-            Renderer = GetComponent<MeshRenderer>();
-
             WakeUp();
         }
 
         void WakeUp()
         {
-            for (int i = 0; i < vr.Length; i++)
+            for (int j = 0; j < units.Length; j++)
             {
-                vr[i].sleeping = false;
+
+                for (int i = 0; i < units[j].vr.Length; i++)
+                {
+                    units[j].vr[i].sleeping = false;
+                }
             }
 
             sleeping = false;
@@ -150,7 +166,6 @@ namespace JellyCube
 
         void FixedUpdate()
         {
-            checkPreset();
             if ((this.transform.position != last_world_position || this.transform.rotation != last_world_rotation))
             {
                 WakeUp();
@@ -158,38 +173,44 @@ namespace JellyCube
 
             if (!sleeping)
             {
-                V3_WorkingMesh = OriginalMesh.vertices;
-
                 int v_sleeping_counter = 0;
-
-                for (int i = 0; i < vr.Length; i++)
+                int vrAll = 0;
+                for (int k = 0; k < units.Length; k++)
                 {
-                    if (vr[i].sleeping)
+
+                    units[k].V3_WorkingMesh = units[k].OriginalMesh.vertices;
+
+                    vrAll += units[k].vr.Length;
+                    for (int i = 0; i < units[k].vr.Length; i++)
                     {
-                        v_sleeping_counter++;
+                        if (units[k].vr[i].sleeping)
+                        {
+                            v_sleeping_counter++;
+                        }
+                        else
+                        {
+                            Vector3 V3_MeshPos = units[k].V3_WorkingMesh[units[k].vr[i].indexId];
+                            Vector3 v3_target = transform.TransformPoint(V3_MeshPos);
+
+                            units[k].vr[i].mass = m_Mass;
+                            units[k].vr[i].stiffness = m_Stiffness;
+                            units[k].vr[i].damping = m_Damping;
+
+                            units[k].vr[i].intensity = (1 - (temp - (v3_target.y - pivotTran.position.y)) / temp) * m_EffectIntensity;
+                            units[k].vr[i].update(v3_target);
+
+                            v3_target = transform.InverseTransformPoint(units[k].vr[i].pos);
+
+                            units[k].V3_WorkingMesh[units[k].vr[i].indexId] = Vector3.Lerp(units[k].V3_WorkingMesh[units[k].vr[i].indexId], v3_target, units[k].vr[i].intensity);
+
+                        }
                     }
-                    else
-                    {
-                        Vector3 V3_MeshPos = V3_WorkingMesh[vr[i].indexId];
-                        Vector3 v3_target = transform.TransformPoint(V3_MeshPos);
 
-                        vr[i].mass = m_Mass;
-                        vr[i].stiffness = m_Stiffness;
-                        vr[i].damping = m_Damping;
+                    units[k].WorkingMesh.vertices = units[k].V3_WorkingMesh;
 
-                        vr[i].intensity = (1 - (temp - (v3_target.y - pivotTran.position.y)) / temp) * m_EffectIntensity;
-                        vr[i].update(v3_target);
 
-                        v3_target = transform.InverseTransformPoint(vr[i].pos);
-
-                        V3_WorkingMesh[vr[i].indexId] = Vector3.Lerp(V3_WorkingMesh[vr[i].indexId], v3_target, vr[i].intensity);
-
-                    }
                 }
-
-                WorkingMesh.vertices = V3_WorkingMesh;
-
-                if (this.transform.position == last_world_position && this.transform.rotation == last_world_rotation && v_sleeping_counter == vr.Length)
+                if (this.transform.position == last_world_position && this.transform.rotation == last_world_rotation && v_sleeping_counter == vrAll)
                 {
                     sleeping = true;
                 }
@@ -242,16 +263,6 @@ namespace JellyCube
                     m_Damping = 0.25f;
                     m_EffectIntensity = 1f;
                     break;
-                case RubberType.Doovoo:
-                    if (doovooEffect != null)
-                    {
-                        m_Mass = doovooEffect.m_Mass;
-                        m_Stiffness = doovooEffect.m_Stiffness;
-                        m_Damping = doovooEffect.m_Damping;
-                        m_EffectIntensity = doovooEffect.m_EffectIntensity;
-                    }
-                    break;
-
             }
 
             m_Mass = Mathf.Max(m_Mass, 0);
