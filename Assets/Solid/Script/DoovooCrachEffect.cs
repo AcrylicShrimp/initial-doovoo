@@ -29,7 +29,7 @@ public class DoovooCrachEffect : MonoBehaviour
                 junkTrans[i] = junkRigids[i].GetComponent<Transform>();
             }
         }
-        public Transform[] explosion(Vector3 dir, float force)
+        public Transform[] explosion(Vector3 dir, float force, float speeder)
         {
             Vector3 explosionPoint = (dir + Vector3.down * 0.5f).normalized;//pivot.InverseTransformPoint(-dir);
             Debug.Log(explosionPoint);
@@ -41,8 +41,9 @@ public class DoovooCrachEffect : MonoBehaviour
             {
                 junkRigids[i].isKinematic = false;
                 junkRigids[i].AddExplosionForce(force, explosionPoint + pivot.position, 100f);
+                junkRigids[i].AddForce(Vector3.forward * speeder * 30f);
                 junkRigids[i].AddTorque(new Vector3(UnityEngine.Random.Range(-180f, 180f), UnityEngine.Random.Range(-180f, 180f),
-                    UnityEngine.Random.Range(-180f, 180f)));
+                       UnityEngine.Random.Range(-180f, 180f)));
                 junkTrans[i].SetParent(null);
             }
             return junkTrans;
@@ -85,13 +86,15 @@ public class DoovooCrachEffect : MonoBehaviour
         if (isRight && rightCount > 0)
         {
             StartCoroutine(disableJunk(
-              partDic[(PartLocation)(3 - --rightCount)].explosion((dir + Vector3.right * 0.1f).normalized, explosionForce)
+              partDic[(PartLocation)(3 - --rightCount)].explosion((dir + Vector3.right * 0.1f).normalized, explosionForce,
+              Vector3.Distance(agoPos, transform.position))
                    ));
         }
         else if (leftCount > 0)
         {
             StartCoroutine(disableJunk(
-           partDic[(PartLocation)(-3 + --leftCount)].explosion((dir - Vector3.right * 0.1f).normalized, explosionForce)
+               partDic[(PartLocation)(-3 + --leftCount)].explosion((dir - Vector3.right * 0.1f).normalized, explosionForce,
+               Vector3.Distance(agoPos, transform.position))
              ));
         }
     }
