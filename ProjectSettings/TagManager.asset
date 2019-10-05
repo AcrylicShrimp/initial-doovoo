@@ -3,7 +3,9 @@
 --- !u!78 &1
 TagManager:
   serializedVersion: 2
-  tags: []
+  tags:
+  - CubeBlue
+  - CubeRed
   layers:
   - Default
   - TransparentFX
@@ -13,7 +15,9 @@ TagManager:
   - UI
   - 
   - 
-  - PostProcessing
+  - 
+  - CharactersSkin
+  - Characters
   - 
   - 
   - 
@@ -34,9 +38,7 @@ TagManager:
   - 
   - 
   - 
-  - 
-  - 
-  - 
+  - Reserved
   m_SortingLayers:
   - name: Default
     uniqueID: 0

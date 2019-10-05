@@ -1,0 +1,22 @@
+﻿V1.2.2 - 
+- Updated deprecated code to Unity 2018.2 compatible
+- Replaced camera effects by the post processing stack
+- Added basic joystick support
+
+V1.2.1 - 04-10-2015
+- Fixed standard effects package importing issues
+
+V1.2 - 04-10-2015
+- Implemented new behaviours to the CubeController
+- Implemented new Sokoban style level example
+- Implemented new cube behaviour test scene, with different cube behaviours to test new gameplay modes
+- Refactory of some CubeController.cs methods
+
+V1.1 - 08-09-2015
+- Changed project, lighting setup and disabled camera effects to improve mobile compatibility
+- Implemented button reload on ui
+- Included OpenSans font as default ui font
+- Fixed Sound being played twice after reload
+
+v1.0 - 08-04-2015
+- Released
