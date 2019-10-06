@@ -42,6 +42,15 @@ public class KeyStrokeInputController : MonoBehaviour
 
             this.Coefficient = Mathf.Min(this.nKeyCount / this.nMaximumKeyCount, 1f);
         }
+        public void updateAnroid(MonoBehaviour sOwner)
+        {
+            this.nLastKey = this.nFirst;
+            ++this.nKeyCount;
+
+            sOwner.StartCoroutine(this.reduceKeyCount());
+
+            this.Coefficient = Mathf.Min(this.nKeyCount / this.nMaximumKeyCount, 1f);
+        }
 
         private IEnumerator reduceKeyCount()
         {
@@ -57,12 +66,17 @@ public class KeyStrokeInputController : MonoBehaviour
     [SerializeField]
     private float _MaximumKeyCount;
     private KeyStrokeInput sLeftInput;
+    public KeyStrokeInput SLeftInput { get { return sLeftInput; } }
     private KeyStrokeInput sRightInput;
+    public KeyStrokeInput SRightInput { get { return sRightInput; } }
 
     private void Awake()
     {
         this.sLeftInput = new KeyStrokeInput(this._MaximumKeyCount, KeyCode.Z, KeyCode.X);
         this.sRightInput = new KeyStrokeInput(this._MaximumKeyCount, KeyCode.Comma, KeyCode.Period);
+#if UNITY_ANDROID
+        _MaximumKeyCount = 3;
+#endif
     }
 
     private void Update()

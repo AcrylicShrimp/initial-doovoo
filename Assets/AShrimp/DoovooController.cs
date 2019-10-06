@@ -25,6 +25,10 @@ public class DoovooController : MonoBehaviour
         this.sPathReceiver = this.GetComponent<PathReceiver>();
         this.sKeyStrokeInputController = this.GetComponent<KeyStrokeInputController>();
         this.sSpeedController = new SpeedController(this._MaximumSpeed);
+#if UNITY_ANDROID
+        _RotationSpeed = 80f;
+#endif
+
     }
 
     private void FixedUpdate()

@@ -20,6 +20,7 @@ public class DoovooCrachEffect : MonoBehaviour
         private Transform[] junkTrans;
         public GameObject particle;
         public Animator humman;
+        public AudioSource[] sounds;
         public GameObject[] timelineObj;
         public void init()
         {
@@ -36,12 +37,17 @@ public class DoovooCrachEffect : MonoBehaviour
         public Transform[] explosion(Vector3 dir, float force, float speeder)
         {
             Vector3 explosionPoint = (dir + Vector3.down * 0.5f).normalized;//pivot.InverseTransformPoint(-dir);
-            Debug.Log(explosionPoint);
+            //Debug.Log(explosionPoint);
             particle.transform.SetParent(null);
             particle.SetActive(true);
             GuageCtroller.instance.removeHuman(humman);
 
             humman.SetFloat("AddSpeed", 15f);
+            for (int i = 0; i < sounds.Length; i++)
+            {
+                Debug.Log("사운드!" + sounds[i].gameObject.name);
+                sounds[i].Play();
+            }
             for (int i = 0; i < timelineObj.Length; i++)
             {
                 timelineObj[i].SetActive(false);
@@ -132,7 +138,7 @@ public class DoovooCrachEffect : MonoBehaviour
     }
     public IEnumerator disableJunk(Transform[] junkTrans)
     {
-        yield return new WaitForSeconds(1f);
+        yield return new WaitForSeconds(4f);
         Debug.Log("꺼주기");
         for (int i = 0; i < junkTrans.Length; i++)
         {
