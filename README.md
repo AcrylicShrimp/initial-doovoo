@@ -17,5 +17,8 @@ Repeat hitting left side of screen rapidly to thrust left side. Hit right side f
 
 > **CAUTION**: Currently, it cannot recognize touches on gauge UI. Please avoid them when you hit.
 
+## Donwloads
+Please refer the releases.
+
 ## Images
 
