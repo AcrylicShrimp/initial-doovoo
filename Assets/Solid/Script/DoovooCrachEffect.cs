@@ -125,17 +125,19 @@ public class DoovooCrachEffect : MonoBehaviour
     {
         agoPos = transform.position;
     }
-    private void OnGUI()
-    {
-        if (GUILayout.Button("Right"))
-        {
-            crachEffect(true);
-        }
-        if (GUILayout.Button("Left"))
-        {
-            crachEffect(false);
-        }
-    }
+
+    //private void OnGUI()
+    //{
+    //    if (GUILayout.Button("Right"))
+    //    {
+    //        crachEffect(true);
+    //    }
+    //    if (GUILayout.Button("Left"))
+    //    {
+    //        crachEffect(false);
+    //    }
+    //}
+
     public IEnumerator disableJunk(Transform[] junkTrans)
     {
         yield return new WaitForSeconds(4f);

@@ -25,6 +25,7 @@ public class ClearTrigger : MonoBehaviour
         {
             keyCtrl.enabled = false;
             timeLineOn.SetActive(true);
+            CleraManager.instance.clearTimeSave();
             for (int i = 0; i < disableObjs.Length; i++)
             {
                 disableObjs[i].SetActive(false);
