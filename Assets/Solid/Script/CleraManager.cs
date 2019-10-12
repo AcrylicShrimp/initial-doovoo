@@ -164,4 +164,8 @@ public class CleraManager : MonoBehaviour
             ani.SetTrigger("ClearS");
         }
     }
+    public void exitGame()
+    {
+        Application.Quit();
+    }
 }
